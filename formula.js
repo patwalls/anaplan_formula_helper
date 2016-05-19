@@ -3,26 +3,13 @@ console.log('this formula file loads');
 
 var formulaInput = document.querySelector('.formulaBarText');
 
-var tooltip = $('body').after('<tooltip></tooltip>');
-
-$('tooltip').css({
-  "position": "absolute",
-  "top": "127px",
-  "left": "90px",
-  "border": '1px solid gray',
-  "background-color": "white",
-  "font-size": "100%",
-  "font": "sans-serif"
-});
-
 var openFunc = function (formula) {
   var closeParenCount = 0;
   for (var i = formula.length - 1; i > -1; i--) {
     if (formula[i] == '(') {
       if (closeParenCount == 0) {
         var start = formula.slice(0,i).search(/(\w+)$/);
-        console.log(formula.slice(start,i));
-        return i
+        return formula.slice(start,i);
       } else {
         closeParenCount -= 1
       }
@@ -38,18 +25,13 @@ formulaInput.addEventListener('keyup', function(e)
         var fullFormula = e.srcElement.value
         var caretPosition = doGetCaretPosition(formulaInput);
         var formulaUpToCursor = fullFormula.slice(0,caretPosition);
-        var func = openFunc(formulaUpToCursor);
-        if (func) {
-          showTooltip(func);
+        var funcText = openFunc(formulaUpToCursor);
+        if (funcText) {
+          updateTooltip(funcText);
         }
     }, 0);
   });
 
-var showTooltip = function (formula) {
-  var formula = formula;
-  console.log(FUNCTIONS);
-  var formulaObj = FUNCTIONS[formula];
-  console.log(formulaObj);
+var updateTooltip = function (funcText) {
+    tooltip.openFunc(FUNCTIONS[funcText]);
 };
-
-// TODO on load

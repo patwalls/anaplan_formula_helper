@@ -10,7 +10,7 @@
     {
       "matches": ["file:///Users/pwalls/Desktop/anaplan_formula_helper/formula_bar_test.html"],
       "css": ["style.css"],
-      "js": ["jquery-1.12.3.min.js", "background.js", "formula.js", "lib.js", "functions.js"]
+      "js": ["jquery-1.12.3.min.js", "tooltip.js", "formula.js", "lib.js", "functions.js" ]
     }
   ]
 }
