@@ -2,15 +2,15 @@
   "name": "Anaplan Formula Helper",
   "description": "Writing formulas in Anaplan is fun!",
   "version": "0.1",
-  "permissions": [
-    "activeTab"
-  ],
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
   "browser_action": {
     "default_title": "Anaplan Formula Helper"
   },
-  "manifest_version": 2
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["file:///Users/pwalls/Desktop/anaplan_formula_helper/formula_bar_test.html"],
+      "css": ["style.css"],
+      "js": ["jquery-1.12.3.min.js", "background.js", "formula.js", "lib.js", "functions.js"]
+    }
+  ]
 }
