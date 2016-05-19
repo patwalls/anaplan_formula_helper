@@ -1,9 +1,22 @@
 tooltip {
 	position: absolute;
-	top: 127px,
-	left: 90px,
-	border: '1px solid gray',
-	background-color: white,
-	font-size: 100%,
-	font: sans-serif
+	top: 127px;
+	left: 90px;
+	border: 1px solid gray;
+	background-color: white;
+	font-size: 100%;
+	font: sans-serif;
+
+}
+
+tooltip > ul {
+	list-style-type: none;
+	padding: 5px;
+	margin: 0px;
+}
+
+li.title {
+	font-weight: bold;
+	font-size: 80%;
+	font: sans-serif;
 }
