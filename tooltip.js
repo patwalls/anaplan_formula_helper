@@ -28,10 +28,10 @@ ToolTip.prototype.showFormula = function () {
 		<li class=title>Summary: </li><li>' + this.func.summary + '</li>\
 	<ul>')
 	for (var i = 0; i < this.func.params.length; i++) {
-		var paramTitle = $('<li class=title>Parameter ' + (i + 1) + '</li>');
+		var paramTitle = $('<li class=title>' + this.func.params[i][0] + '</li>');
 		(i == this.param) ? paramTitle.addClass('current-param') : null ;
-		
-		var paramDetails = '<li>Parameter ' + this.func.params[i][0] + ' : ' + this.func.params[i][1]+ '</li>';
+
+		var paramDetails = '<li>' + this.func.params[i][1] + '</li>';
 
 		$('ul.list').append(paramTitle).append(paramDetails);
 	}
