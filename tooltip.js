@@ -6,10 +6,12 @@ var tooltip = new ToolTip;
 function ToolTip () {
 	this.element = $('tooltip');
 	this.func = null;
+	this.param = null;
 }
 
-ToolTip.prototype.openFunc = function (func) {
+ToolTip.prototype.openFunc = function (func, param) {
 	this.func = func;
+	this.param = param;
 	this.clear();
 	this.showFormula();
 	console.log(this);
@@ -26,11 +28,11 @@ ToolTip.prototype.showFormula = function () {
 		<li class=title>Summary: </li><li>' + this.func.summary + '</li>\
 	<ul>')
 	for (var i = 0; i < this.func.params.length; i++) {
-		$('ul.list').append('<li><li class=title>Parameter ' + (i + 1) 
-			+ '</li>' 
-			+ this.func.params[i][0] 
-			+ ' : ' 
-			+ this.func.params[i][1] 
-			+ '</li>')
+		var paramTitle = $('<li class=title>Parameter ' + (i + 1) + '</li>');
+		(i == this.param) ? paramTitle.addClass('current-param') : null ;
+		
+		var paramDetails = '<li>Parameter ' + this.func.params[i][0] + ' : ' + this.func.params[i][1]+ '</li>';
+
+		$('ul.list').append(paramTitle).append(paramDetails);
 	}
 }

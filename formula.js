@@ -19,7 +19,8 @@ var openFunc = function (formula) {
       if (closeParenCount == 0) {
         var startIdxOfLastFunc = formula.slice(0,i).search(/(\w+)$/);
         var funcText = formula.slice(startIdxOfLastFunc,i);
-        tooltip.openFunc(FUNCTIONS[funcText]);
+        var commas = countCommas(formula.slice(startIdxOfLastFunc, formula.length));
+        tooltip.openFunc(FUNCTIONS[funcText],commas);
         return
       } else {
         closeParenCount -= 1
@@ -29,4 +30,8 @@ var openFunc = function (formula) {
     }
   }
   tooltip.clear();
+}
+
+var countCommas = function(text) {
+  return text.split(',').length - 1
 }

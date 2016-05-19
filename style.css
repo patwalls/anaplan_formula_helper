@@ -20,3 +20,7 @@ li.title {
 	font-size: 80%;
 	font: sans-serif;
 }
+
+li.current-param {
+	color: red;
+}
