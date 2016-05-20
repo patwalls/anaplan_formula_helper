@@ -6,6 +6,9 @@
     "default_title": "Anaplan Formula Helper"
   },
   "manifest_version": 2,
+  "icons": { "16": "anaplan.png",
+           "48": "anaplan.png",
+          "128": "anaplan.png" },
   "content_scripts": [
     {
       "matches": ["file:///Users/pwalls/Desktop/anaplan_formula_helper/formula_bar_test.html","*://*.anaplan.com/*"],
