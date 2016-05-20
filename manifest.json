@@ -8,9 +8,10 @@
   "manifest_version": 2,
   "content_scripts": [
     {
-      "matches": ["file:///Users/pwalls/Desktop/anaplan_formula_helper/formula_bar_test.html"],
+      "matches": ["file:///Users/pwalls/Desktop/anaplan_formula_helper/formula_bar_test.html","*://*.anaplan.com/*"],
       "css": ["style.css"],
-      "js": ["jquery-1.12.3.min.js", "tooltip.js", "formula.js", "lib.js", "functions.js" ]
+      "js": ["jquery-1.12.3.min.js", "arrive.min.js", "tooltip.js", "formula.js", "lib.js", "functions.js" ],
+      "run_at": "document_end"
     }
   ]
 }

@@ -1,3 +1,5 @@
+$(document).arrive(".formulaBarText", function() {
+
 console.log('this formula file loads');
 
 var formulaInput = document.querySelector('.formulaBarText');
@@ -35,3 +37,5 @@ var openFunc = function (formula) {
 var countCommas = function(text) {
   return text.split(',').length - 1
 }
+
+});
