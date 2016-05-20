@@ -23,10 +23,11 @@ var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/
  
   $(entry).each(function(){
     var funcObject = {
+                      'name'   : this.gsx$function.$t,
                       'syntax' : this.gsx$syntax.$t,
-                      'example': this.gsx$example.$t,
                       'summary': this.gsx$summary.$t,
-                      'params' : this.gsx$params.$t.split(',')
+                      'params' : this.gsx$params.$t.split(','),
+                      'link'   : this.gsx$link.$t
                     }
     FUNCTIONS[this.gsx$name.$t] = funcObject;
   });

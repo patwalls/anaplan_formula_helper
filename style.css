@@ -2,10 +2,11 @@ tooltip {
 	position: absolute;
 	top: 127px;
 	left: 90px;
-	border: 1px solid gray;
+	border: 1px solid rgba(0,0,0,.2);
 	background-color: white;
-	font-size: 100%;
-	font: sans-serif;
+	font-size: 80%;
+	font-family: sans-serif;
+	color: #222;
 
 }
 
@@ -15,12 +16,27 @@ tooltip > ul {
 	margin: 0px;
 }
 
-li.title {
-	font-weight: bold;
-	font-size: 80%;
+tooltip > ul > li.head {
+	background-color: #f5f5f5;
+	font-size: 100%;
 	font: sans-serif;
 }
 
-li.current-param {
-	color: red;
+tooltip > ul > li.title {
+	color: #666;
+	font-size: 60%;
+	margin-top: 5px;
+}
+
+tooltip > ul > li.link {
+	font-size: 80%;
+	margin-top: 8px;
+}
+
+tooltip > ul > li > span {
+	color: #666;
+}
+
+tooltip > ul > li.not-current-param > span {
+	color: white;
 }

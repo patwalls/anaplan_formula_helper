@@ -23,16 +23,17 @@ ToolTip.prototype.clear = function () {
 
 ToolTip.prototype.showFormula = function () {
 	this.element.append('<ul class=list>\
-		<li class=title>Syntax: </li><li>' + this.func.syntax + '</li>\
-		<li class=title>Example: </li><li>' + this.func.example + '</li>\
-		<li class=title>Summary: </li><li>' + this.func.summary + '</li>\
+		<li class=head>' + this.func.name + '</li>\
+		<li class=title>Syntax</li><li>' + this.func.syntax + '</li>\
+		<li class=title>Description</li><li>' + this.func.summary + '</li>\
+		<li class=title>Parameters</li>\
 	<ul>')
 	for (var i = 0; i < this.func.params.length; i++) {
-		var paramTitle = $('<li class=title>Param ' + (i + 1) + '</li>');
-		(i == this.param) ? paramTitle.addClass('current-param') : null ;
+		var param = $('<li><span>▶ </span>' + this.func.params[i] + '</li>');
+		(i != this.param) ? param.addClass('not-current-param') : null ;
 
-		var paramDetails = '<li>' + this.func.params[i] + '</li>';
-
-		$('ul.list').append(paramTitle).append(paramDetails);
+		$('ul.list').append(param)
+		
 	}
+	$('ul.list').append('<li class=link><a href=' + this.func.link + '>See more details about ' + this.func.name + '.</a></li>');
 }
