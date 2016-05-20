@@ -1,4 +1,6 @@
-$(document).arrive(".formulaBarText", function() {
+console.log('this works');
+
+// $(document).arrive(".formulaBarText", function() {
 
   console.log('this formula file loads');
 
@@ -38,4 +40,4 @@ $(document).arrive(".formulaBarText", function() {
     return text.split(',').length - 1
   }
 
-});
+// });
