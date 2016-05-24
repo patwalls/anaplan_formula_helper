@@ -40,3 +40,7 @@ tooltip > ul > li > span {
 tooltip > ul > li.not-current-param > span {
 	color: white;
 }
+
+.helper-hide-button {
+	color: red;
+}

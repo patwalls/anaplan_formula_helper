@@ -7,6 +7,7 @@ Download it [here](https://chrome.google.com/webstore/detail/anaplan-formula-hel
 ###Main Functionality:
 * View details about an open function while you're writing it.
 * Understand what parameter you're currently typing out.
+* Ability to close tooltip when you don't need it.
 
 ###Coming soon:
 * Autocomplete/suggested functions.

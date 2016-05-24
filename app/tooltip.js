@@ -7,18 +7,36 @@ function ToolTip () {
 	this.element = $('tooltip');
 	this.func = null;
 	this.param = null;
+	this.open = true;
 }
 
 ToolTip.prototype.openFunc = function (func, param) {
 	this.func = func;
 	this.param = param;
 	this.clear();
+
+	this.tooltipOptions();
 	this.showFormula();
-	console.log(this);
 }
 
 ToolTip.prototype.clear = function () {
 	this.element.empty();
+}
+
+ToolTip.prototype.hide = function () {
+	this.open = false;
+	console.log(this);
+}
+
+ToolTip.prototype.tooltipOptions = function () {
+	var closeButton = $('<span class=helper-hide-button>x</span>');
+	this.element.append(closeButton);
+
+	var tooltip = this;
+
+	closeButton.on('click', function () {
+		tooltip.hide();
+	});
 }
 
 ToolTip.prototype.showFormula = function () {

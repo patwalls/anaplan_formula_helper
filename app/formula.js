@@ -1,20 +1,20 @@
-console.log('this works');
+console.log('waiting for document to arrive');
 
 $(document).arrive(".formulaBarText", function() {
 
-  console.log('this formula file loads');
+  console.log('document arrived');
 
   var formulaInput = document.querySelector('.formulaBarText');
 
-  formulaInput.addEventListener('keyup', function(e)
-    {
-      setTimeout(function() {
-          var fullFormula = e.srcElement.value
-          var caretPosition = doGetCaretPosition(formulaInput);
-          var formulaUpToCursor = fullFormula.slice(0,caretPosition);
-          openFunc(formulaUpToCursor);
-      }, 0);
-    });
+  formulaInput.addEventListener('keyup', function(e) {
+    setTimeout(function() {
+        var fullFormula = e.srcElement.value
+        var caretPosition = doGetCaretPosition(formulaInput);
+        var formulaUpToCursor = fullFormula.slice(0,caretPosition);
+
+        openFunc(formulaUpToCursor);
+    }, 0);
+  });
 
   var openFunc = function (formula) {
     var closeParenCount = 0;
