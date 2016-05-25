@@ -33,7 +33,6 @@ ToolTip.prototype.tooltipOptions = function () {
 	var tooltipDiv = $('<div class=tooltip-container><span class=helper-hide-button>x</span></div>');
 	this.element.append(tooltipDiv);
 	var closeButton = $('span.helper-hide-button');
-	console.log(closeButton);
 
 	var tooltip = this;
 	closeButton.on('click', function () {
