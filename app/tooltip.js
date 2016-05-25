@@ -14,9 +14,10 @@ ToolTip.prototype.openFunc = function (func, param) {
 	this.func = func;
 	this.param = param;
 	this.clear();
-
-	this.tooltipOptions();
-	this.showFormula();
+	if (this.open) {
+		this.tooltipOptions();
+		this.showFormula();
+	}
 }
 
 ToolTip.prototype.clear = function () {
@@ -25,22 +26,24 @@ ToolTip.prototype.clear = function () {
 
 ToolTip.prototype.hide = function () {
 	this.open = false;
-	console.log(this);
+	this.clear();
 }
 
 ToolTip.prototype.tooltipOptions = function () {
-	var closeButton = $('<span class=helper-hide-button>x</span>');
-	this.element.append(closeButton);
+	var tooltipDiv = $('<div class=tooltip-container><span class=helper-hide-button>x</span></div>');
+	this.element.append(tooltipDiv);
+	var closeButton = $('span.helper-hide-button');
+	console.log(closeButton);
 
 	var tooltip = this;
-
 	closeButton.on('click', function () {
 		tooltip.hide();
 	});
 }
 
 ToolTip.prototype.showFormula = function () {
-	this.element.append('<ul class=list>\
+	var tooltipDiv = $('div.tooltip-container');
+	tooltipDiv.append('<ul class=list>\
 		<li class=head>' + this.func.name + '</li>\
 		<li class=title>Syntax</li><li>' + this.func.syntax + '</li>\
 		<li class=title>Description</li><li>' + this.func.summary + '</li>\
