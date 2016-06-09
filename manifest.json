@@ -6,6 +6,7 @@
     "default_title": "Anaplan Formula Helper"
   },
   "manifest_version": 2,
+  "main": "lib/main.js",
   "icons": { "16": "anaplan.png",
            "48": "anaplan.png",
           "128": "anaplan.png" },
