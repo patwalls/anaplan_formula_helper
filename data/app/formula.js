@@ -1,16 +1,16 @@
 console.log('waiting for formula editor elements to arrive');
 
-// $(document).arrive(".formulaBarText", function() {
-//   console.log('bar arrived');
-//   var formulaElement = document.querySelector('.formulaBarText');
-//   setEventListener(formulaElement);
-// });
-//
-// $(document).arrive(".formulaEditorText", function(e) {
-//   console.log('editor arrived');
-//   var formulaElement = document.querySelector('.formulaEditorText');
-//   setEventListener(formulaElement);
-// });
+$(document).arrive(".formulaBarText", function() {
+  console.log('bar arrived');
+  var formulaElement = document.querySelector('.formulaBarText');
+  setEventListener(formulaElement);
+});
+
+$(document).arrive(".formulaEditorText", function(e) {
+  console.log('editor arrived');
+  var formulaElement = document.querySelector('.formulaEditorText');
+  setEventListener(formulaElement);
+});
 
 var setEventListener = function (formulaElement) {
   formulaElement.addEventListener('keyup', function(e) {
@@ -24,11 +24,6 @@ var setEventListener = function (formulaElement) {
     }, 0);
   });
 }
-
-
-var formulaElement = document.querySelector('.formulaBarText');
-setEventListener(formulaElement);
-console.log(formulaElement);
 
 var openFunc = function (formula) {
   var closeParenCount = 0;
