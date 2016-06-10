@@ -9,7 +9,7 @@ Download and install [here](https://chrome.google.com/webstore/detail/anaplan-fo
 ## Firefox Add-On
 1. Download this [file](http://s000.tinyupload.com/index.php?file_id=00366035109938825125).
 2. In the top right of Firefox, click the menu button, then click on 'Add-ons'.
-3. Drag that downloaded file onto the Add-ons page.
+3. Drag the downloaded zip file onto the Add-ons page.
 
 ### Formula Data
 
