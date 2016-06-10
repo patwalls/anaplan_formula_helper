@@ -6,15 +6,14 @@
     "default_title": "Anaplan Formula Helper"
   },
   "manifest_version": 2,
-  "main": "lib/main.js",
-  "icons": { "16": "anaplan.png",
-           "48": "anaplan.png",
-          "128": "anaplan.png" },
+  "icons": { "16": "data/anaplan.png",
+           "48": "data/anaplan.png",
+          "128": "data/anaplan.png" },
   "content_scripts": [
     {
       "matches": ["file:///Users/pwalls/Desktop/anaplan_formula_helper/formula_bar_test.html","*://*.anaplan.com/*"],
-      "css": ["app/style.css"],
-      "js": ["lib/jquery-1.12.3.min.js", "lib/arrive.min.js", "app/tooltip.js", "app/formula.js", "lib/lib.js", "app/functions.js" ],
+      "css": ["data/app/style.css"],
+      "js": ["data/lib/jquery-1.12.3.min.js", "data/lib/arrive.min.js", "data/app/tooltip.js", "data/app/formula.js", "data/lib/lib.js", "data/app/functions.js" ],
       "run_at": "document_end"
     }
   ]
