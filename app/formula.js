@@ -3,12 +3,16 @@ console.log('waiting for formula editor elements to arrive');
 $(document).arrive(".formulaBarText", function() {
   console.log('bar arrived');
   var formulaElement = document.querySelector('.formulaBarText');
+  tooltip.formulaElement = formulaElement;
+  tooltip.tooltipPositioning();
   setEventListener(formulaElement);
 });
 
 $(document).arrive(".formulaEditorText", function(e) {
   console.log('editor arrived');
   var formulaElement = document.querySelector('.formulaEditorText');
+  tooltip.formulaElement = formulaElement;
+  tooltip.tooltipPositioning();
   setEventListener(formulaElement);
 });
 

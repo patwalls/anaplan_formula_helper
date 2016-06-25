@@ -5,6 +5,7 @@ var tooltip = new ToolTip;
 
 function ToolTip () {
 	this.element = $('tooltip');
+	this.formulaElement = null;
 	this.func = null;
 	this.param = null;
 	this.open = true;
@@ -29,6 +30,23 @@ ToolTip.prototype.hide = function () {
 	this.clear();
 }
 
+ToolTip.prototype.tooltipPositioning = function () {
+	console.log(this.formulaElement.className);
+	var rect = this.formulaElement.getBoundingClientRect();
+	if (this.formulaElement.className == "formulaEditorText") {
+		var top = rect.top;
+		var left = (rect.right + 4);
+	} else {
+		var top = (rect.top + 27);
+		var left = (rect.left - 1);
+	}
+
+	$('tooltip').css({
+		'top': top,
+		'left': left
+	});
+}
+
 ToolTip.prototype.tooltipOptions = function () {
 	var tooltipDiv = $('<div class=tooltip-container><span class=helper-hide-button>x</span></div>');
 	this.element.append(tooltipDiv);
@@ -38,7 +56,8 @@ ToolTip.prototype.tooltipOptions = function () {
 	closeButton.on('click', function () {
 		tooltip.hide();
 	});
-}
+	this.tooltipPositioning();
+};
 
 ToolTip.prototype.showFormula = function () {
 	var tooltipDiv = $('div.tooltip-container');
@@ -53,7 +72,7 @@ ToolTip.prototype.showFormula = function () {
 		(i != this.param) ? param.addClass('not-current-param') : null ;
 
 		$('ul.list').append(param)
-		
+
 	}
 	$('ul.list').append('<li class=link><a href=' + this.func.link + '>See more details about ' + this.func.name + '.</a></li>');
 }
