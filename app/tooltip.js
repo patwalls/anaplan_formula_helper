@@ -1,7 +1,7 @@
-console.log('loading tooltip')
+console.log('loading tooltip');
 $('body').after('<tooltip></tooltip>');
 
-var tooltip = new ToolTip;
+var tooltip = new ToolTip();
 
 function ToolTip () {
 	this.element = $('tooltip');
@@ -9,6 +9,8 @@ function ToolTip () {
 	this.func = null;
 	this.param = null;
 	this.open = true;
+	this.top = 0;
+	this.left = 0;
 }
 
 ToolTip.prototype.openFunc = function (func, param) {
@@ -19,33 +21,32 @@ ToolTip.prototype.openFunc = function (func, param) {
 		this.tooltipOptions();
 		this.showFormula();
 	}
-}
+};
 
 ToolTip.prototype.clear = function () {
 	this.element.empty();
-}
+};
 
 ToolTip.prototype.hide = function () {
 	this.open = false;
 	this.clear();
-}
+};
 
 ToolTip.prototype.tooltipPositioning = function () {
-	console.log(this.formulaElement.className);
 	var rect = this.formulaElement.getBoundingClientRect();
 	if (this.formulaElement.className == "formulaEditorText") {
-		var top = rect.top;
-		var left = (rect.right + 4);
+		this.top = rect.top;
+		this.left = (rect.right + 4);
 	} else {
-		var top = (rect.top + 27);
-		var left = (rect.left - 1);
+		this.top = (rect.top + 27);
+		this.left = (rect.left - 1);
 	}
 
 	$('tooltip').css({
-		'top': top,
-		'left': left
+		'top': this.top,
+		'left': this.left
 	});
-}
+};
 
 ToolTip.prototype.tooltipOptions = function () {
 	var tooltipDiv = $('<div class=tooltip-container><span class=helper-hide-button>x</span></div>');
@@ -60,19 +61,22 @@ ToolTip.prototype.tooltipOptions = function () {
 };
 
 ToolTip.prototype.showFormula = function () {
+	/*jshint multistr: true */
 	var tooltipDiv = $('div.tooltip-container');
 	tooltipDiv.append('<ul class=list>\
 		<li class=head>' + this.func.name + '</li>\
 		<li class=title>Syntax</li><li>' + this.func.syntax + '</li>\
 		<li class=title>Description</li><li>' + this.func.summary + '</li>\
 		<li class=title>Parameters</li>\
-	<ul>')
+	<ul>');
 	for (var i = 0; i < this.func.params.length; i++) {
 		var param = $('<li><span>▶ </span>' + this.func.params[i] + '</li>');
-		(i != this.param) ? param.addClass('not-current-param') : null ;
+		if (i != this.param) {
+			param.addClass('not-current-param');
+		}
 
-		$('ul.list').append(param)
+		$('ul.list').append(param);
 
 	}
 	$('ul.list').append('<li class=link><a href=' + this.func.link + '>See more details about ' + this.func.name + '.</a></li>');
-}
+};

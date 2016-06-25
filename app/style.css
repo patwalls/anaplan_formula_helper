@@ -2,10 +2,10 @@ tooltip {
 	position: absolute;
 	border: 1px solid rgba(0,0,0,.2);
 	background-color: white;
-	font-size: 80%;
+	font-size: 100%;
 	font-family: sans-serif;
 	color: #222;
-
+	width: 350px;
 }
 
 .tooltip-container > ul {
