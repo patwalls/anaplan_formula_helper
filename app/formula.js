@@ -15,7 +15,7 @@ $(document).arrive(".formulaEditorText", function(e) {
 var setEventListener = function (formulaElement) {
   formulaElement.addEventListener('keyup', function(e) {
     setTimeout(function() {
-        var fullFormula = e.srcElement.value
+        var fullFormula = e.srcElement.value.toLowerCase();
         var caretPosition = doGetCaretPosition(formulaElement);
         var formulaUpToCursor = fullFormula.slice(0,caretPosition);
 
