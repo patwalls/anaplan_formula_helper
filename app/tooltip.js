@@ -48,6 +48,14 @@ ToolTip.prototype.tooltipPositioning = function () {
 	});
 };
 
+ToolTip.prototype.completeFormula = function() {
+	$(this.formulaElement).css('color', 'black');
+};
+
+ToolTip.prototype.incompleteFormula = function() {
+	$(this.formulaElement).css('color', 'gray');
+};
+
 ToolTip.prototype.tooltipOptions = function () {
 	var tooltipDiv = $('<div class=tooltip-container><span class=helper-hide-button>x</span></div>');
 	this.element.append(tooltipDiv);
