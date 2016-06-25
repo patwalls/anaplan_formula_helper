@@ -17,13 +17,13 @@ var FUNCTIONS = {};
 var spreadsheetID = "1Va4Zj0CAbkSEvtQ3G8PThSv9b76JziP1j7zp2rj5Uq0";
 
 var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
-
+ 
  $.getJSON(url, function(data) {
 
   // console.log(data);
-
+ 
   var entry = data.feed.entry;
-
+ 
   $(entry).each(function(){
     var funcObject = {
                       'name'   : this.gsx$function.$t,
@@ -35,4 +35,6 @@ var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/
     FUNCTIONS[this.gsx$name.$t] = funcObject;
   });
 
+  console.log(FUNCTIONS);
+ 
  });

@@ -2,16 +2,9 @@
 
 The Anaplan Formula Helper is a Chrome Extension to make writing formulas easier in Anaplan. It is built with JavaScript and jQuery.
 
-## Chrome Extension
+Download it [here](https://chrome.google.com/webstore/detail/anaplan-formula-helper/ekjmcfghjgnplkmpmacbjknfbkdgbabc).
 
-Download and install [here](https://chrome.google.com/webstore/detail/anaplan-formula-helper/ekjmcfghjgnplkmpmacbjknfbkdgbabc).
-
-## Firefox Add-On
-Download and install [here](https://addons.mozilla.org/en-us/firefox/addon/anaplan-formula-helper/).
-
-### Formula Data
-
-Add and update functions through this (need to request access) [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1Va4Zj0CAbkSEvtQ3G8PThSv9b76JziP1j7zp2rj5Uq0/edit#gid=0).
+Add and update functions through this [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1Va4Zj0CAbkSEvtQ3G8PThSv9b76JziP1j7zp2rj5Uq0/edit#gid=0).
 
 ###Main Functionality:
 * View details about an open function while you're writing it.
