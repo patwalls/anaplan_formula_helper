@@ -22,12 +22,12 @@
 
 .tooltip-container > ul > li.title {
 	color: #666;
-	font-size: 60%;
+	font-size: 90%;
 	margin-top: 5px;
 }
 
 .tooltip-container > ul > li.link {
-	font-size: 80%;
+	font-size: 90%;
 	margin-top: 8px;
 }
 
