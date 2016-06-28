@@ -1,20 +1,20 @@
 console.log('waiting for formula editor elements to arrive');
 
-// $(document).arrive(".formulaBarText", function() {
-//   console.log('bar arrived');
-//   var formulaElement = document.querySelector('.formulaBarText');
-//   tooltip.formulaElement = formulaElement;
-//   tooltip.tooltipPositioning();
-//   setEventListener(formulaElement);
-// });
-//
-// $(document).arrive(".formulaEditorText", function(e) {
-//   console.log('editor arrived');
-//   var formulaElement = document.querySelector('.formulaEditorText');
-//   tooltip.formulaElement = formulaElement;
-//   tooltip.tooltipPositioning();
-//   setEventListener(formulaElement);
-// });
+$(document).arrive(".formulaBarText", function() {
+  console.log('bar arrived');
+  var formulaElement = document.querySelector('.formulaBarText');
+  tooltip.formulaElement = formulaElement;
+  tooltip.tooltipPositioning();
+  setEventListener(formulaElement);
+});
+
+$(document).arrive(".formulaEditorText", function(e) {
+  console.log('editor arrived');
+  var formulaElement = document.querySelector('.formulaEditorText');
+  tooltip.formulaElement = formulaElement;
+  tooltip.tooltipPositioning();
+  setEventListener(formulaElement);
+});
 
 var setEventListener = function (formulaElement) {
   formulaElement.addEventListener('keyup', function(e) {
@@ -75,7 +75,7 @@ String.prototype.countChar = function (char) {
 // - NOTE: uncomment last 4 lines to easily build with test in local environment
 // - use file in root directory 'formula_bar_test.html'
 // - make sure to comment out both document.arrive functions at the top of this file
-var formulaElement = document.querySelector('.formulaBarText');
-tooltip.formulaElement = formulaElement;
-tooltip.tooltipPositioning();
-setEventListener(formulaElement);
+// var formulaElement = document.querySelector('.formulaBarText');
+// tooltip.formulaElement = formulaElement;
+// tooltip.tooltipPositioning();
+// setEventListener(formulaElement);

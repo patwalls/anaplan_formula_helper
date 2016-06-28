@@ -24,6 +24,7 @@ ToolTip.prototype.openFunc = function (func, param) {
 };
 
 ToolTip.prototype.clear = function () {
+	this.element.removeClass('tooltip');
 	this.element.empty();
 };
 
@@ -41,11 +42,13 @@ ToolTip.prototype.tooltipPositioning = function () {
 		this.top = (rect.top + 27);
 		this.left = (rect.left - 1);
 	}
-
-	$('tooltip').css({
-		'top': this.top,
-		'left': this.left
-	});
+	if (this.func) {
+		$('tooltip').css({
+			'top': this.top,
+			'left': this.left
+		});
+		$('tooltip').addClass('tooltip');
+	}
 };
 
 ToolTip.prototype.completeFormula = function() {
