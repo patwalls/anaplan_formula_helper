@@ -89,5 +89,5 @@ ToolTip.prototype.showFormula = function () {
 		$('ul.list').append(param);
 
 	}
-	$('ul.list').append('<li class=link><a href=' + this.func.link + '>See more details about ' + this.func.name + '.</a></li>');
+	$('ul.list').append('<li class=link><a href=' + this.func.link + ' target="_blank">See more details about ' + this.func.name + '.</a></li>');
 };
